@@ -1,0 +1,24 @@
+#!/bin/bash
+
+cd /tmp/
+rm "wal-theme"
+touch "wal-theme"
+
+echo 'source "$HOME/.cache/wal/colors.sh"' >> /tmp/wal-theme
+echo 'NAME="wal-theme"' >> /tmp/wal-theme
+echo 'NOGUI=True' >> /tmp/wal-theme
+echo 'BG=${color0:1}' >> /tmp/wal-theme
+echo 'FG=${color7:1}' >> /tmp/wal-theme
+echo 'SEL_BG=${color5:1}' >> /tmp/wal-theme
+echo 'SEL_FG=${color15:1}' >> /tmp/wal-theme
+echo 'TXT_BG=${color0:1}' >> /tmp/wal-theme
+echo 'TXT_FG=${color7:1}' >> /tmp/wal-theme
+echo 'MENU_BG=${color0:1}' >> /tmp/wal-theme
+echo 'MENU_FG=${color7:1}' >> /tmp/wal-theme
+echo 'BTN_BG=${color8:1}' >> /tmp/wal-theme
+echo 'BTN_FG=${color15:1}' >> /tmp/wal-theme
+
+oomox-cli /tmp/wal-theme >NUL
+oomox-archdroid-icons-cli /tmp/wal-theme >NUL
+gtkrc-reload
+
